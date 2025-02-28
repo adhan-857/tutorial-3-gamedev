@@ -4,7 +4,7 @@
 ### Latihan Mandiri: Eksplorasi Mekanika Pergerakan
 
 #### *Double jump*
-> Saya mengimplementasikan *double jump* dengan memanfaatkan variabel `jump_count` yang di-*reset* setiap kali karakter menyentuh lantai, sehingga ketika tombol **ui_up** ditekan dua kali, kode di bagian `if jump_count == 1 and !is_on_floor() and Input.is_action_just_pressed('ui_up'):` akan mengatur `velocity.y` ke nilai **jump_speed** dan menaikkan **jump_count** ke 2 dan memberikan efek lompatan kedua yang ekstra.
+> Saya mengimplementasikan *double jump* dengan memanfaatkan variabel `jump_count` yang di-*reset* setiap kali karakter menyentuh lantai, sehingga ketika tombol **ui_up** ditekan dua kali, kode di bagian `if jump_count == 1 and !is_on_floor() and Input.is_action_just_pressed('ui_up'):` akan mengatur `velocity.y` ke nilai `jump_speed` dan menaikkan `jump_count` ke 2 dan memberikan efek lompatan kedua yang ekstra.
 <br>
 
 #### *Dashing*
@@ -19,4 +19,4 @@
 ### *Polishing* Sederhana
 
 #### Memperbaiki *sprite* karakter sehingga tampilannya sesuai dengan arah jalannya karakter
-> Saya mengimplementasikan perbaikan *sprite* berdasarkan arah gerak dengan memanfaatkan properti `flip_h` pada *node sprite*. Ketika tombol arah ditekan, terdapat blok kode yang mengatur `sprite.flip_h = true` untuk gerak ke kiri atau `sprite.flip_h = false` untuk gerak ke kanan agar *sprite* secara otomatis menghadap ke arah tombol ditekan sehingga karakter selalu menghadap ke arah gerakan. Pendekatan ini memastikan orientasi karakter tetap konsisten, sehingga dapat memudahkan pemain dalam mengidentifikasi arah pergerakan.
+> Saya mengimplementasikan perbaikan *sprite* berdasarkan arah gerak dengan memanfaatkan properti `flip_h` pada *node sprite*. Ketika tombol arah ditekan, terdapat blok kode yang mengatur `sprite.flip_h = true` untuk gerak ke kiri atau `sprite.flip_h = false` untuk gerak ke kanan agar *sprite* secara otomatis menghadap ke arah tombol ditekan, sehingga karakter selalu menghadap ke arah gerakan. Pendekatan ini memastikan orientasi karakter tetap konsisten, sehingga dapat memudahkan pemain dalam mengidentifikasi arah pergerakan.
