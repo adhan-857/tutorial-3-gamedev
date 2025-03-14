@@ -2,8 +2,7 @@
 - [Tutorial 3 - Introduction to Game Programming](#tutorial-3---introduction-to-game-programming)
 - [Tutorial 5 - Assets Creation & Integration](#tutorial-5---assets-creation--integration)
 <br>
-<br>
-<br>
+
 
 # Tutorial 3 - Introduction to Game Programming
 ## Ramadhan Andika Putra (2206081976) - GameDev A <br>
@@ -58,7 +57,7 @@
 > Saya mengupdate *logic* pada player dengan menggantikan penggunaan `Sprite2D` dan pengaturan `texture` secara langsung dengan penggunaan `AnimatedSprite2D`. Saya mengimpor *custom spritesheet* dan membuat resource `SpriteFrames` yang berisi animasi seperti 'idle', 'jump', 'dash', dan 'crouch'. Saya mengimplementasikan fungsi `anim_set(animation)` untuk mengecek apakah animasi yang aktif sudah sama dengan animasi yang akan diputar, sehingga transisi antar animasi terjadi secara natural tanpa terjadi *restart* animasi yang tidak diinginkan.<br>
 
 #### Implementasi Interaksi Ganda antara Player dan Yeti
-Saya mengimplementasikan dua jenis interaksi antara Player dan Yeti di skrip `Yeti.gd`. Saat Player bertabrakan dengan Yeti melalui *node* `Area2D`, skrip mengecek apakah Player sedang dalam kondisi *dash*. Jika Player sedang dash, Yeti akan memainkan animasi 'kabur' dan pergi meninggalkan layar permainan. Namun, jika Player tidak *dash*, Yeti akan memainkan animasi 'marah' yang mengindikasikan bahwa Yeti memukul Player hingga *game over*. *Logic* ini saya buat dengan memanfaatkan pengecekan properti `is_dashing` dari Player serta penggunaan node `Area2D` untuk mendeteksi tabrakan.<br>
+> Saya mengimplementasikan dua jenis interaksi antara Player dan Yeti di skrip `Yeti.gd`. Saat Player bertabrakan dengan Yeti melalui *node* `Area2D`, skrip mengecek apakah Player sedang dalam kondisi *dash*. Jika Player sedang dash, Yeti akan memainkan animasi 'kabur' dan pergi meninggalkan layar permainan. Namun, jika Player tidak *dash*, Yeti akan memainkan animasi 'marah' yang mengindikasikan bahwa Yeti memukul Player hingga *game over*. *Logic* ini saya buat dengan memanfaatkan pengecekan properti `is_dashing` dari Player serta penggunaan node `Area2D` untuk mendeteksi tabrakan.<br>
 
 #### Menambahkan Background di Main.tscn
 > Untuk menambahkan *background* pada *scene* utama, saya menambahkan node `TextureRect` ke dalam `Main.tscn` dan mengatur *anchor*-nya agar memenuhi seluruh layar. Saya mengimpor *background image* yang sesuai dengan tema permainan, yaitu suasana pegunungan es dan memastikan properti `Expand` aktif sehingga gambar dapat menyesuaikan ukuran layar dengan baik. Pendekatan ini saya gunakan agar tampilan visual lebih menarik dan mendukung latar game yang saya kembangkan
