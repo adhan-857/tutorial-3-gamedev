@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://c477rbgfbw1rt"]
+
+[ext_resource type="Script" path="res://scenes/Player.gd" id="1_6acha"]
+[ext_resource type="Texture2D" uid="uid://xc8juyipvr0r" path="res://assets/player_tilesheet.png" id="2_nd4ws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oi5v1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q37hd"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xhuui"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(240, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8xnw"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(80, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx4qo"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gulje"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_me7ax"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi2hq"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(80, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gx66b"]
+atlas = ExtResource("2_nd4ws")
+region = Rect2(160, 220, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hdty2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q37hd")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xhuui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8xnw")
+}],
+"loop": false,
+"name": &"dash",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx4qo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gulje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_me7ax")
+}],
+"loop": true,
+"name": &"jalan_kanan",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi2hq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gx66b")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(765, 153)
+script = ExtResource("1_6acha")
+gravity = null
+walk_speed = null
+jump_speed = null
+crouch_speed = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_oi5v1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_hdty2")
+animation = &"jalan_kanan"
+autoplay = "idle"
+frame_progress = 0.287365

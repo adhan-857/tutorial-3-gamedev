@@ -1,28 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dsyfep1odrxje"]
+[gd_scene load_steps=6 format=3 uid="uid://dsyfep1odrxje"]
 
 [ext_resource type="PackedScene" uid="uid://c6stfv24v14ia" path="res://scenes/Ground.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://c7l7f234k83hc" path="res://assets/Snow storm mountain.png" id="1_d8ymp"]
 [ext_resource type="PackedScene" uid="uid://c477rbgfbw1rt" path="res://scenes/player.tscn" id="2_mpgt3"]
+[ext_resource type="AudioStream" uid="uid://nf72nqht644u" path="res://assets/snowy night on a mountain.wav" id="3_6rdpt"]
+[ext_resource type="PackedScene" uid="uid://dy7tqxne73x3m" path="res://scenes/yeti.tscn" id="4_5njfc"]
 
 [node name="Root" type="Node2D"]
 position = Vector2(-47, 245)
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 39.0
+offset_top = -255.0
+offset_right = 1831.0
+offset_bottom = 769.0
+scale = Vector2(0.650525, 0.636599)
+texture = ExtResource("1_d8ymp")
+
 [node name="Ground" parent="." instance=ExtResource("1")]
-position = Vector2(624, 214)
+position = Vector2(568, 198)
 
 [node name="Ground2" parent="." instance=ExtResource("1")]
-position = Vector2(1095, 64)
+position = Vector2(1020, 29)
 
 [node name="Ground3" parent="." instance=ExtResource("1")]
-position = Vector2(151, 355)
+position = Vector2(140, 351)
 
 [node name="Ground4" parent="." instance=ExtResource("1")]
-position = Vector2(1023, 375)
+position = Vector2(1044, 377)
 
 [node name="Ground5" parent="." instance=ExtResource("1")]
-position = Vector2(624, -86)
+position = Vector2(589, -50)
 
 [node name="Ground6" parent="." instance=ExtResource("1")]
-position = Vector2(413, -86)
+position = Vector2(87, 87)
 
 [node name="Ground7" parent="." instance=ExtResource("1")]
 position = Vector2(696, 445)
@@ -31,4 +42,12 @@ position = Vector2(696, 445)
 position = Vector2(485, 445)
 
 [node name="Player" parent="." instance=ExtResource("2_mpgt3")]
-position = Vector2(102, -34)
+position = Vector2(92, 258)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_6rdpt")
+volume_db = -20.799
+autoplay = true
+
+[node name="Yeti" parent="." instance=ExtResource("4_5njfc")]
+position = Vector2(1098, 187)
